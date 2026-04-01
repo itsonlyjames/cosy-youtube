@@ -13,7 +13,7 @@ async function initialize() {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "toggleStyles") {
-    console.log('test action', message);
+    console.log("test action", message);
     stylesEnabled = message.enabled;
     updateHtmlAttribute(stylesEnabled);
     sendResponse({ success: true });
