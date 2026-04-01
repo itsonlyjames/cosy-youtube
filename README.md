@@ -10,4 +10,4 @@ Cosy Youtube turns your YouTube experience into one that is comfortable & cosy.
 
 | Without Cosy YouTube                          | With Cosy YouTube                       |
 | --------------------------------------------- | --------------------------------------- |
-| ![Without](./assets/without-cosy-youtube.jpg) | ![With](./assets/with-cosy-youtube.jpg) |
+| ![Without](./assets/without-cosy-youtube.jpeg) | ![With](./assets/with-cosy-youtube.jpeg) |
