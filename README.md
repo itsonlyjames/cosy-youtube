@@ -1,6 +1,8 @@
 <h1 align="center">Cosy YouTube</h1>
 
-<img src="./assets/mascot.png" alt="Cosy YouTube mascot" />
+<p align="center">
+    <img src="./assets/mascot.png" alt="Cosy YouTube mascot" style="max-width: 300px;" />
+</p>
 
 <p align="center">I love YouTube, I don't love all the fluff that comes with the UI.</p>
 
