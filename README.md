@@ -6,7 +6,9 @@
 
 <p align="center">I love YouTube, I don't love all the fluff that comes with the UI.</p>
 
-<p align="center">Cosy YouTube turns your YouTube experience into one that is comfortable & cosy.</p>
+## How It Works
+
+<p align="center">Cosy YouTube transforms your YouTube experience by expanding the video, and removing UI elements that distract from that cosy experience.</p>
 
 <br/>
 
