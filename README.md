@@ -8,7 +8,9 @@
 
 ## How It Works
 
-Cosy YouTube transforms your YouTube experience by expanding the video, and removing UI elements that distract from that cosy experience.<br/>
+Cosy YouTube transforms your YouTube experience by expanding the video, and removing UI elements that distract from that cosy experience.
+
+<br/>
 
 | Without Cosy YouTube                           | With Cosy YouTube                        |
 | ---------------------------------------------- | ---------------------------------------- |
