@@ -16,11 +16,10 @@ Cosy YouTube transforms your YouTube experience by expanding the video, and remo
 | ---------------------------------------------- | ---------------------------------------- |
 | ![Without](./assets/without-cosy-youtube.jpeg) | ![With](./assets/with-cosy-youtube.jpeg) |
 
-<br/>
-
 ## Installation
 
-1. Download `cosy-youtube.zip` from the [latest release](../../releases/latest) and unzip it somewhere permanent. It has to be in a permanent location as chrome loads the extension from that folder each time.
-2. Open `chrome://extensions` and enable **Developer mode** (top-right toggle).
-3. Click **Load unpacked** and select the unzipped folder (the one containing `manifest.json`).
+1. Download `cosy-youtube.zip` from the [latest release](../../releases/latest) and unzip it somewhere permanent
+   - It has to be in a permanent location as chrome loads the extension from that folder each time
+2. Open `chrome://extensions` and enable **Developer mode** (top-right toggle)
+3. Click **Load unpacked** and select the unzipped folder (the one containing `manifest.json`)
 4. Head to any YouTube video and click the Cosy YouTube icon in the toolbar to toggle it on!
