@@ -10,8 +10,6 @@
 
 Cosy YouTube transforms your YouTube experience by expanding the video, and removing UI elements that distract from that cosy experience.
 
-<br/>
-
 | Without Cosy YouTube                           | With Cosy YouTube                        |
 | ---------------------------------------------- | ---------------------------------------- |
 | ![Without](./assets/without-cosy-youtube.jpeg) | ![With](./assets/with-cosy-youtube.jpeg) |
