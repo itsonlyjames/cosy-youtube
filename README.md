@@ -4,7 +4,7 @@
     <img src="./assets/cosy-mascot.png" alt="Cosy YouTube mascot" width="300" />
 </p>
 
-<p align="center">I love YouTube, I don't love all the fluff that comes with the UI.</p><br/>
+<p align="center">I love YouTube, I don't love all the fluff that comes with the UI.</p>
 
 ## How It Works
 
