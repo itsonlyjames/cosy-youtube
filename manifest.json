@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Cosy Youtube",
+  "name": "Cosy YouTube",
   "version": "1.0",
-  "description": "Enjoy an incredibly cosy lo-fi experience with Cosy Youtube",
+  "description": "Enjoy an incredibly cosy lo-fi experience with Cosy YouTube",
 
   "permissions": ["storage", "activeTab"],
 
@@ -25,7 +25,7 @@
 
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Cosy Youtube Toggle",
+    "default_title": "Cosy YouTube Toggle",
     "default_icon": {
       "16": "icons/extension_icon@16px.png",
       "32": "icons/extension_icon@32px.png",
