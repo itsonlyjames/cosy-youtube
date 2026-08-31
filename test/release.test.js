@@ -15,8 +15,15 @@ test("manifest has release-safe permissions, version, and resources", async () =
   const packageMetadata = JSON.parse(await readProjectFile("package.json"));
 
   assert.equal(manifest.manifest_version, 3);
-  assert.equal(manifest.version, "1.0.1");
   assert.equal(packageMetadata.version, manifest.version);
+
+  const versionParts = manifest.version.split(".");
+  assert.ok(versionParts.length >= 1 && versionParts.length <= 4);
+  for (const part of versionParts) {
+    assert.match(part, /^(0|[1-9]\d*)$/);
+    assert.ok(Number(part) <= 65535);
+  }
+
   assert.deepEqual(manifest.permissions, ["storage"]);
   assert.deepEqual(manifest.host_permissions, ["*://*.youtube.com/*"]);
   assert.equal(manifest.action.default_popup, "popup.html");
