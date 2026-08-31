@@ -36,10 +36,17 @@
       position: relative;
       width: 50px;
       height: 24px;
+      padding: 0;
+      border: 0;
       background: #ccc;
       border-radius: 12px;
       cursor: pointer;
       transition: background 0.3s;
+    }
+
+    .toggle-switch:focus-visible {
+      outline: 2px solid #1a73e8;
+      outline-offset: 2px;
     }
 
     .toggle-switch.active {
@@ -71,13 +78,20 @@
 </head>
 
 <body>
-  <div class="header">Cosy Youtube</div>
+  <div class="header">Cosy YouTube</div>
 
   <div class="toggle-container">
-    <span class="toggle-label">Lo-fi Mode</span>
-    <div class="toggle-switch" id="styleToggle">
-      <div class="toggle-slider"></div>
-    </div>
+    <span class="toggle-label" id="styleToggleLabel">Lo-fi Mode</span>
+    <button
+      class="toggle-switch"
+      id="styleToggle"
+      type="button"
+      role="switch"
+      aria-checked="false"
+      aria-labelledby="styleToggleLabel"
+    >
+      <span class="toggle-slider"></span>
+    </button>
   </div>
 
   <script src="popup.js"></script>

@@ -1,25 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Cosy YouTube",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Enjoy an incredibly cosy lo-fi experience with Cosy YouTube",
 
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage"],
 
   "host_permissions": ["*://*.youtube.com/*"],
 
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
+      "css": ["styles.css"],
       "js": ["content.js"],
       "run_at": "document_start"
-    }
-  ],
-
-  "web_accessible_resources": [
-    {
-      "resources": ["styles.css"],
-      "matches": ["*://*.youtube.com/*"]
     }
   ],
 

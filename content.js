@@ -1,42 +1,19 @@
 let stylesEnabled = false;
-let styleElement = null;
 
 initialize();
 
-async function initialize() {
-  const result = await chrome.storage.sync.get(["stylesEnabled"]);
-  stylesEnabled = result.stylesEnabled;
+chrome.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName !== "sync" || !changes.stylesEnabled) return;
 
-  await injectStyles();
+  stylesEnabled = Boolean(changes.stylesEnabled.newValue);
   updateHtmlAttribute(stylesEnabled);
-}
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "toggleStyles") {
-    console.log("test action", message);
-    stylesEnabled = message.enabled;
-    updateHtmlAttribute(stylesEnabled);
-    sendResponse({ success: true });
-  }
 });
 
-async function injectStyles() {
-  removeStyles();
+async function initialize() {
+  const result = await chrome.storage.sync.get(["stylesEnabled"]);
+  stylesEnabled = Boolean(result.stylesEnabled);
 
-  try {
-    const response = await fetch(chrome.runtime.getURL("styles.css"));
-    const cssText = await response.text();
-
-    styleElement = document.createElement("style");
-    styleElement.id = "cosy-youtube-styles";
-    styleElement.textContent = cssText;
-
-    document.head.appendChild(styleElement);
-  } catch (error) {
-    console.error("Failed to load styles.css:", error);
-  }
-
-  triggerResize();
+  updateHtmlAttribute(stylesEnabled);
 }
 
 function updateHtmlAttribute(enabled) {
@@ -49,26 +26,6 @@ function updateHtmlAttribute(enabled) {
   triggerResize();
 }
 
-function removeStyles() {
-  if (styleElement) {
-    styleElement.remove();
-    styleElement = null;
-  }
-  const existingStyles = document.getElementById("cosy-youtube-styles");
-  if (existingStyles) existingStyles.remove();
-}
-
 function triggerResize() {
   requestAnimationFrame(() => window.dispatchEvent(new Event("resize")));
 }
-
-// Handle YouTube SPA navigation
-let currentUrl = location.href;
-new MutationObserver(() => {
-  if (location.href !== currentUrl) {
-    currentUrl = location.href;
-    setTimeout(() => {
-      updateHtmlAttribute(stylesEnabled);
-    }, 500); // small delay for DOM updates
-  }
-}).observe(document, { subtree: true, childList: true });
