@@ -27,7 +27,7 @@ With Cosy YouTube, you can:
 
 I love watching YouTube. I just don’t love all the interface competing with whatever I’m trying to watch.
 
-So I spent an afternoon with Claude building a small prototype around a simple idea: watching YouTube should feel like watching the video—not navigating a website.
+So I spent an afternoon with Claude building a small prototype around a simple idea: watching YouTube should feel like watching the video, not navigating a website.
 
 It started as a personal experiment, but it quickly became something I wanted to keep using.
 
