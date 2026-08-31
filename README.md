@@ -1,25 +1,49 @@
-<h1 align="center">Cosy YouTube</h1>
+<h1 align="center">Cosy YouTube: Less Interface. More Video.</h1>
 
 <p align="center">
-    <img src="./assets/cosy-mascot.png" alt="Cosy YouTube mascot" width="300" />
+  <img src="./assets/cosy-mascot.png" alt="Cosy YouTube mascot" width="300" />
 </p>
 
-<p align="center">I love YouTube, I don't love all the fluff that comes with the UI.</p>
+<p align="center">A calmer, more focused way to watch the YouTube videos you love.</p>
 
-## How It Works
+You open YouTube for the video, not for the interface surrounding it.
 
-Cosy YouTube transforms your YouTube experience by expanding the video, and removing UI elements that distract from that cosy experience.
+Cosy YouTube clears away the visual clutter and gives the player room to breathe. It expands the video to fill the available space and moves the masthead out of sight. Move your cursor to the top of the screen whenever you need it, and it returns.
 
-| Without Cosy YouTube                           | With Cosy YouTube                        |
-| ---------------------------------------------- | ---------------------------------------- |
-| ![Without](./assets/without-cosy-youtube.jpeg) | ![With](./assets/with-cosy-youtube.jpeg) |
+## Make Space for What You Came to Watch
 
-## Installation
+| Without Cosy YouTube                                                | With Cosy YouTube                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------- |
+| ![YouTube without Cosy YouTube](./assets/without-cosy-youtube.jpeg) | ![YouTube with Cosy YouTube](./assets/with-cosy-youtube.jpeg) |
 
-> Note: manual installation is necessary for the meantime until I get the extension on the store!
+With Cosy YouTube, you can:
 
-1. Download `cosy-youtube.zip` from the [latest release](../../releases/latest) and unzip it somewhere permanent
-   - It has to be in a permanent location as chrome loads the extension from that folder each time
-2. Open `chrome://extensions` and enable **Developer mode** (top-right toggle)
-3. Click **Load unpacked** and select the unzipped folder (the one containing `manifest.json`)
-4. Head to any YouTube video and click the Cosy YouTube icon in the toolbar to toggle it on!
+- Give the video more room to breathe
+- Hide the masthead until you hover over it
+- Turn the cosy view on or off from the extension toolbar
+- Keep using the YouTube experience you already know
+
+## Why I Made It
+
+I love watching YouTube. I just don’t love all the interface competing with whatever I’m trying to watch.
+
+So I spent an afternoon with Claude building a small prototype around a simple idea: watching YouTube should feel like watching the video—not navigating a website.
+
+It started as a personal experiment, but it quickly became something I wanted to keep using.
+
+## Install Cosy YouTube
+
+Cosy YouTube is currently available as a manually installed Chrome extension. It isn’t in the Chrome Web Store yet, so installation takes a few extra steps:
+
+1. [Download the latest release](https://github.com/itsonlyjames/cosy-youtube/releases/latest).
+2. Unzip it somewhere permanent.
+3. Open `chrome://extensions` in Chrome.
+4. Enable **Developer mode**.
+5. Select **Load unpacked** and choose the unzipped folder containing `manifest.json`.
+6. Open a YouTube video and use the Cosy YouTube toolbar icon to switch it on.
+
+That’s it. Your videos now have a little more space, and a lot less noise.
+
+> To keep using Cosy YouTube, leave the unzipped folder in its permanent location. When a new version is released, replace that folder with the new release and reload the extension from `chrome://extensions`.
+
+Cosy YouTube is still an early project, if you have an idea that would make it better, [open an issue on GitHub](https://github.com/itsonlyjames/cosy-youtube/issues).
