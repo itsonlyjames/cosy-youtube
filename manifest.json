@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Cosy YouTube",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "Enjoy an incredibly cosy lo-fi experience with Cosy YouTube",
 
   "permissions": ["storage"],
