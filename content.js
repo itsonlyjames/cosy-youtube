@@ -1,6 +1,9 @@
 let stylesEnabled = false;
 
+updatePageAttribute();
 initialize();
+
+document.addEventListener("yt-navigate-finish", updatePageAttribute);
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
   if (areaName !== "sync" || !changes.stylesEnabled) return;
@@ -22,6 +25,16 @@ function updateHtmlAttribute(enabled) {
     htmlEl.setAttribute("cosy-youtube", "");
   } else {
     htmlEl.removeAttribute("cosy-youtube");
+  }
+  triggerResize();
+}
+
+function updatePageAttribute() {
+  const htmlEl = document.documentElement;
+  if (location.pathname === "/watch") {
+    htmlEl.setAttribute("cosy-youtube-video", "");
+  } else {
+    htmlEl.removeAttribute("cosy-youtube-video");
   }
   triggerResize();
 }

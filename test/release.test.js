@@ -187,9 +187,15 @@ test("installation initializes only a missing preference", async () => {
   assert.equal((await runBackgroundInstall(false)).length, 0);
 });
 
-async function createContentScriptInstance(initialValue, storageListeners) {
+async function createContentScriptInstance(
+  initialValue,
+  storageListeners,
+  initialPathname = "/",
+) {
   const attributes = new Set();
   const resizeEvents = [];
+  const documentListeners = new Map();
+  const location = { pathname: initialPathname };
   const source = await readProjectFile("content.js");
 
   vm.runInNewContext(source, {
@@ -210,11 +216,14 @@ async function createContentScriptInstance(initialValue, storageListeners) {
       },
     },
     document: {
+      addEventListener: (event, listener) =>
+        documentListeners.set(event, listener),
       documentElement: {
         removeAttribute: (name) => attributes.delete(name),
         setAttribute: (name) => attributes.add(name),
       },
     },
+    location,
     requestAnimationFrame: (callback) => callback(),
     window: {
       dispatchEvent: (event) => resizeEvents.push(event.type),
@@ -222,8 +231,29 @@ async function createContentScriptInstance(initialValue, storageListeners) {
   });
 
   await new Promise((resolve) => setImmediate(resolve));
-  return { attributes, resizeEvents };
+  return {
+    attributes,
+    resizeEvents,
+    navigate(pathname) {
+      location.pathname = pathname;
+      documentListeners.get("yt-navigate-finish")();
+    },
+  };
 }
+
+test("video-only styles follow YouTube single-page navigation", async () => {
+  const storageListeners = [];
+  const tab = await createContentScriptInstance(true, storageListeners, "/");
+
+  assert.equal(tab.attributes.has("cosy-youtube"), true);
+  assert.equal(tab.attributes.has("cosy-youtube-video"), false);
+
+  tab.navigate("/watch");
+  assert.equal(tab.attributes.has("cosy-youtube-video"), true);
+
+  tab.navigate("/");
+  assert.equal(tab.attributes.has("cosy-youtube-video"), false);
+});
 
 test("a sync change updates every running content-script instance", async () => {
   const storageListeners = [];
@@ -243,6 +273,6 @@ test("a sync change updates every running content-script instance", async () => 
 
   assert.equal(firstTab.attributes.has("cosy-youtube"), true);
   assert.equal(secondTab.attributes.has("cosy-youtube"), true);
-  assert.equal(firstTab.resizeEvents.length, 2);
-  assert.equal(secondTab.resizeEvents.length, 2);
+  assert.equal(firstTab.resizeEvents.length, 3);
+  assert.equal(secondTab.resizeEvents.length, 3);
 });
