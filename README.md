@@ -46,4 +46,22 @@ That’s it. Your videos now have a little more space, and a lot less noise.
 
 > To keep using Cosy YouTube, leave the unzipped folder in its permanent location. When a new version is released, replace that folder with the new release and reload the extension from `chrome://extensions`.
 
+### Firefox / LibreWolf
+
+Cosy YouTube works in Firefox too. There are two ways to install it:
+
+**Just trying it out?** Load it temporarily. It'll stay until you restart the browser.
+
+1. [Download the latest release](https://github.com/itsonlyjames/cosy-youtube/releases/latest) and unzip it.
+2. Open `about:debugging` and select **This Firefox**.
+3. Select **Load Temporary Add-on** and choose `manifest.json` from the unzipped folder.
+
+**Want it to stick around?** On LibreWolf or an unbranded Firefox build, you can install it permanently:
+
+1. Open `about:config` and set `xpinstall.signatures.required` to `false`.
+2. Open `about:addons`, select the ⚙ menu, then **Install Add-on From File**.
+3. Choose the `cosy-youtube.xpi` file. You can build one from the repo with `npm run build:xpi`.
+
+> If Cosy YouTube doesn’t switch on, open the extensions (puzzle piece) menu and allow it to run on youtube.com.
+
 Cosy YouTube is still an early project, if you have an idea that would make it better, [open an issue on GitHub](https://github.com/itsonlyjames/cosy-youtube/issues).
