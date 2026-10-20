@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "check": "node --test"
+    "check": "node --test",
+    "build:xpi": "rm -f cosy-youtube.xpi && zip -r cosy-youtube.xpi manifest.json background.js content.js popup.html popup.js styles.css icons -x '*.DS_Store'"
   }
 }
